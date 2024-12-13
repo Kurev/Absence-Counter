@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { FaPenAlt } from "react-icons/fa";
 import { FaWindowClose } from "react-icons/fa";
 
-const Input = () => {
+const Input = ({onAddItem}) => {
   const [open, setOpen] = useState(false);
+  const [subject, setSubject] = useState("");
+  const [maxAbsent, setMaxSubject] = useState("");
 
   const handleToggleDialog = () => {
     setOpen(true);
@@ -11,13 +13,22 @@ const Input = () => {
 
   const handleCloseDialog = () => {
     setOpen(false);
+    setSubject("");
+    setMaxSubject("");
+  }
+
+  const handleSubmit = () => {
+    if (subject.trim() && maxAbsent.trim()){
+      onAddItem({subject, maxAbsent});
+      handleCloseDialog();
+    }
   }
 
   return (
     <div className='relative w-full flex flex-col items-center mt-10'>
       <button 
         onClick={handleToggleDialog} 
-        className='py-2 px-[7%] rounded-md bg-[#584295] text-[#bdbcbe] hover:bg-[#58429582] duration-[0.5s]'
+        className='py-2 px-[7%] rounded-md bg-[#7153c3] text-[#bdbcbe] hover:bg-[#6f53bb82] duration-[0.5s]'
       >
         Add For The List
       </button>
@@ -34,15 +45,20 @@ const Input = () => {
                 <h1 className='text-xl font-semibold text-[#bdbcbe]'>Absence Counter</h1>
               </div>
               <input 
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
                 placeholder='Subject' 
                 className='pl-3 bg-[#0a0a0f] w-full h-[3rem] rounded-lg text-white mb-4' 
               />
-              <input 
+              <input
+                type='number'
+                value={maxAbsent}
+                onChange={(e) => setMaxSubject(e.target.value)}
                 placeholder='Maximum Absent' 
-                className='pl-3 bg-[#0a0a0f] w-full h-[3rem] rounded-lg text-white' 
+                className='pl-3 bg-[#0a0a0f] w-full h-[3rem] rounded-lg text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none' 
               />
               <div className='w-full h-32 flex justify-center items-center'>
-                <button className='px-[6rem] p-3 bg-[#584295] rounded-[25px] text-white'>Sumbit</button>
+                <button onClick={handleSubmit} className='px-[6rem] p-3 bg-[#584295] rounded-[25px] text-white'>Sumbit</button>
               </div>
             </div>
           </div>

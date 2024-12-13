@@ -7,7 +7,6 @@ function App() {
   return (
     <div className='bg-[#060610] h-screen w-full px-[30%]'>
       <Navbar />
-      <Input />
       <List />
     </div>
   )
