@@ -5,7 +5,7 @@ import { FaPenAlt } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <nav className='relative z-10 flex w-full justify-between items-center pt-3'>
+    <nav className='relative z-10 flex w-full justify-between items-center pt-3 select-none'>
       <div className='cursor-pointer'>
         <h1 className='text-2xl text-white'><MdLightMode /></h1>
       </div>
