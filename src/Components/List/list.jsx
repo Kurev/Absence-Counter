@@ -47,18 +47,18 @@ const List = ({ isLightMode }) => {
   const getItemColor = (initialAbsent, maxAbsent) => {
     const percentage = (initialAbsent / maxAbsent) * 100;
     if (maxAbsent - initialAbsent == 1 || percentage == 100)
-      return isLightMode ? "bg-red-400" : "bg-red-500";
+      return isLightMode ? "bg-red-400" : "bg-red-400";
     // if (percentage >= 90) return isLightMode ? "bg-red-400" : "bg-red-500";
     if (percentage >= 75)
-      return isLightMode ? "bg-orange-300" : "bg-orange-400";
+      return isLightMode ? "bg-orange-400" : "bg-orange-400";
     if (percentage >= 50)
-      return isLightMode ? "bg-yellow-300" : "bg-yellow-400";
-    if (percentage >= 1) return isLightMode ? "bg-green-300" : "bg-green-400";
-    return isLightMode ? "bg-green-300" : "bg-green-400";
+      return isLightMode ? "bg-yellow-400" : "bg-yellow-400";
+    if (percentage >= 1) return isLightMode ? "bg-green-400" : "bg-green-400";
+    return isLightMode ? "bg-green-400" : "bg-green-400";
   };
 
   const checkForData = () => {
-    if (list.length === 0) {
+    if (list.length === 0) {  
       return (
         <h1
           className={`text-lg font-light select-none ${
@@ -101,7 +101,7 @@ const List = ({ isLightMode }) => {
           {/* Subject and Absence Info */}
           <h1
             className={`text-1xl select-none ${
-              isLightMode ? "text-black" : "text-[#eedefd]"
+              isLightMode ? "text-black" : "text-white"
             }`}
           >
             {items.subject} - Absent: {items.initialAbsent}/{items.maxAbsent}
