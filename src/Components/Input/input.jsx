@@ -4,7 +4,7 @@ import { FaPenAlt } from "react-icons/fa";
 import { FaWindowClose } from "react-icons/fa";
 
 
-const Input = ({ onAddItem, items }) => {
+const Input = ({ onAddItem, items, isLightMode }) => {
   const [open, setOpen] = useState(false);
   const [subject, setSubject] = useState("");
   const [maxAbsent, setMaxSubject] = useState("");
@@ -42,7 +42,9 @@ const Input = ({ onAddItem, items }) => {
     <div className="relative w-full flex flex-col items-center mt-10">
       <button
         onClick={handleToggleDialog}
-        className="py-2 px-[7%] rounded-md bg-[#7153c3] text-[#bdbcbe] hover:bg-[#6f53bb82] duration-[0.5s] select-none"
+        className={`py-2 px-[7%] rounded-md duration-[0.5s] select-none
+          ${isLightMode ? 'bg-[#6a39f3] text-[#ffffff] hover:bg-[#6b39f3a5]' : 'bg-[#7153c3] text-[#ffffff] hover:bg-[#6f53bb82]'}
+          `}
       >
         Add For The List
       </button>
