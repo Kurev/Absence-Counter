@@ -50,11 +50,11 @@ const List = ({ isLightMode }) => {
       return isLightMode ? "bg-red-400" : "bg-red-500";
     // if (percentage >= 90) return isLightMode ? "bg-red-400" : "bg-red-500";
     if (percentage >= 75)
-      return isLightMode ? "bg-orange-300" : "bg-orange-400";
+      return isLightMode ? "bg-orange-400" : "bg-orange-400";
     if (percentage >= 50)
-      return isLightMode ? "bg-yellow-300" : "bg-yellow-400";
-    if (percentage >= 1) return isLightMode ? "bg-green-300" : "bg-green-400";
-    return isLightMode ? "bg-green-300" : "bg-green-400";
+      return isLightMode ? "bg-yellow-400" : "bg-yellow-400";
+    if (percentage >= 1) return isLightMode ? "bg-green-400" : "bg-green-400";
+    return isLightMode ? "bg-green-400" : "bg-green-400";
   };
 
   const checkForData = () => {
