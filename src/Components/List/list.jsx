@@ -127,12 +127,12 @@ const List = ({ isLightMode }) => {
       </div>
       <div className="mb-6">
         <h1
-          className={`text-4xl font-sans select-none ${
-            isLightMode ? "text-black" : "text-[#bdbcbe]"
-          }`}
-        >
-          List of Absences
-        </h1>
+        className={`font-sans select-none text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl ${
+          isLightMode ? "text-black" : "text-[#bdbcbe]"
+        }`}
+      >
+        List of Absences
+    </h1>
       </div>
       <div className="w-full">
         <div>{checkForData()}</div>
