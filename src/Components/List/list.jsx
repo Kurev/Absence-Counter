@@ -53,8 +53,8 @@ const List = ({ isLightMode }) => {
       return isLightMode ? "bg-orange-300" : "bg-orange-400";
     if (percentage >= 50)
       return isLightMode ? "bg-yellow-300" : "bg-yellow-400";
-    if (percentage >= 1) return isLightMode ? "bg-green-300" : "bg-green-400";
-    return isLightMode ? "bg-green-300" : "bg-green-400";
+    if (percentage >= 1) return isLightMode ? "bg-green-300" : "bg-green-500";
+    return isLightMode ? "bg-green-300" : "bg-green-500";
   };
 
   const checkForData = () => {
@@ -92,7 +92,7 @@ const List = ({ isLightMode }) => {
           {/* Minus Button */}
           <p
             className={`${
-              isLightMode ? "text-blue-600" : "text-[#674EA9]"
+              isLightMode ? "text-blue-600" : "text-[#632aff]"
             } cursor-pointer`}
           >
             <TiMinus onClick={() => decrementAbsent(index)} />
@@ -101,7 +101,7 @@ const List = ({ isLightMode }) => {
           {/* Subject and Absence Info */}
           <h1
             className={`text-1xl select-none ${
-              isLightMode ? "text-black" : "text-[#eedefd]"
+              isLightMode ? "text-black" : "text-[#ffffff]"
             }`}
           >
             {items.subject} - Absent: {items.initialAbsent}/{items.maxAbsent}
@@ -110,7 +110,7 @@ const List = ({ isLightMode }) => {
           {/* Add Button */}
           <p
             className={`${
-              isLightMode ? "text-blue-600" : "text-[#674EA9]"
+              isLightMode ? "text-blue-600" : "text-[#632aff]87"
             } cursor-pointer`}
           >
             <RiAddLargeLine onClick={() => incrementAbsent(index)} />

@@ -30,6 +30,12 @@ const Input = ({ onAddItem, items, isLightMode }) => {
       setPopError(true);
       return;
     }
+
+    if (maxAbsent <= 0 || !Number.isInteger(Number(maxAbsent))) {
+      setPopError(true);
+      return;
+    }
+
     if (subject.trim() && maxAbsent.trim()) {
       onAddItem({ subject, maxAbsent, initialAbsent });
       handleCloseDialog();
